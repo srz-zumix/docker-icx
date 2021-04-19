@@ -13,11 +13,17 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
         cmake \
+        kmod \
+        && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
         intel-oneapi-onevpl-devel-2021.2.2 \
         intel-oneapi-onevpl-devel \
         intel-basekit \
         intel-hpckit \
-        && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo ". /opt/intel/oneapi/setvars.sh" >> ~/.bashrc
