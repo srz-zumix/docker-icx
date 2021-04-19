@@ -24,6 +24,7 @@ RUN wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PR
         intel-oneapi-onevpl-devel \
         intel-basekit \
         intel-hpckit \
+        && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo ". /opt/intel/oneapi/setvars.sh" >> ~/.bashrc
