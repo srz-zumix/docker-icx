@@ -21,6 +21,9 @@ jobs:
             docker push ${IMAGE_NAME}:${DOCKER_TAGE}
             ./hooks/post_push
 
+orbs:
+  docker: circleci/docker@1.4.0
+
 workflows:
   build:
     jobs:
