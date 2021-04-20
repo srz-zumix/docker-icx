@@ -5,6 +5,7 @@ jobs:
     environment:
       DOCKER_TAG: latest
       IMAGE_NAME: srzzumix/icx
+      DOCKER_REPO: srzzumix/icx
     steps:
       - checkout
       - docker/check:
