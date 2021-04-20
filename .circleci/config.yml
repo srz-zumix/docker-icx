@@ -4,7 +4,7 @@ jobs:
     machine: true
     environment:
       DOCKER_TAG: latest
-      IMAGE_NAME: srzzumix/icx
+      IMAGE_NAME: icx
     steps:
       - checkout
       - docker/check:
@@ -13,11 +13,11 @@ jobs:
       - run:
           name: Docker Build
           command: |
-            docker build . -t ${IMAGE_NAME}:${DOCKER_TAGE}
+            docker build . -t ${DOCKERHUB_LOGIN}/${IMAGE_NAME}:${DOCKER_TAG}
       - run:
           name: Docker Push
           command: |
-            docker push ${IMAGE_NAME}:${DOCKER_TAGE}
+            docker push ${DOCKERHUB_LOGIN}/${IMAGE_NAME}:${DOCKER_TAG}
             ./hooks/post_push
 
 orbs:
