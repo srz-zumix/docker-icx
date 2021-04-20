@@ -6,7 +6,6 @@ jobs:
       DOCKER_TAG: latest
       IMAGE_NAME: srzzumix/icx
     steps:
-      - setup_remote_docker
       - checkout
       - docker/check:
           docker-username: DOCKERHUB_LOGIN
